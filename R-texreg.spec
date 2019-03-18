@@ -4,7 +4,7 @@
 #
 Name     : R-texreg
 Version  : 1.36.23
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/texreg_1.36.23.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/texreg_1.36.23.tar.gz
 Summary  : Conversion of R Regression Output to LaTeX or HTML Tables
@@ -23,10 +23,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552928017
+export SOURCE_DATE_EPOCH=1552942052
 
 %install
-export SOURCE_DATE_EPOCH=1552928017
+export SOURCE_DATE_EPOCH=1552942052
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
