@@ -4,7 +4,7 @@
 #
 Name     : R-texreg
 Version  : 1.36.23
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/texreg_1.36.23.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/texreg_1.36.23.tar.gz
 Summary  : Conversion of R Regression Output to LaTeX or HTML Tables
@@ -17,21 +17,22 @@ No detailed description available
 
 %prep
 %setup -q -c -n texreg
+cd %{_builddir}/texreg
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552942052
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1589558297
 
 %install
-export SOURCE_DATE_EPOCH=1552942052
+export SOURCE_DATE_EPOCH=1589558297
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -57,12 +58,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  texreg || :
+R CMD check --no-manual --no-examples --no-codoc texreg || :
 
 
 %files
