@@ -4,7 +4,7 @@
 #
 Name     : R-texreg
 Version  : 1.37.5
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/texreg_1.37.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/texreg_1.37.5.tar.gz
 Summary  : Conversion of R Regression Output to LaTeX or HTML Tables
